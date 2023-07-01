@@ -1,0 +1,38 @@
+<!-- Execute the same code without any button click.
+Hint. Call JavaScript function with Onblur() event.
+Use: getElementByID('id')
+getElementByID('id').innerHTML
+getElementByID('id').style.color = red -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+    <input type="text" id="num1" placeholder="Enter number 1" onblur="calculate()">
+    <input type="text" id="num2" placeholder="Enter number 2" onblur="calculate()">
+
+    <p id="add_result">Addition Result: </p>
+    <p id="sub_result">Subtraction Result: </p>
+    <p id="multiply_result">Multiplication Result: </p>
+    <p id="divide_result">Division Result: </p>
+
+    <script>
+        function calculate() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+
+            var add_result = num1 + num2;
+            var sub_result = num1 - num2;
+            var multiply_result = num1 * num2;
+            var divide_result = num2/num1;
+
+            document.getElementById("add_result").innerText = "Addition Result: " + add_result;
+            document.getElementById("sub_result").innerText = "Subtraction Result: " + sub_result;
+            document.getElementById("multiply_result").innerText = "Multiplication Result: " + multiply_result;
+            document.getElementById("divide_result").innerText = "Division Result: " + divide_result;
+        }
+    </script>
+</body>
+</html>
