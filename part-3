@@ -1,0 +1,31 @@
+//Write a javascript object for CSPIT institute with different departments like CE,IT,CS,EC,EE,CL,ME,.. as department array. Create properties such as year of
+//establishment, location. Write function inside CSPIT object to get all details. Create another Empty function of department CE as prototype of CSPIT. Write properties
+//like total student and total faculty [Take as 250 students and 30 faculties]. Retrieve all possible records from CSPIT and CE. Use proper for in and for of loop. 
+
+//declaring an object
+const CSPIT = {
+  name: "CSPIT Institute",
+  departments: ["CE", "IT", "CS", "EC", "EE", "CL", "ME"],
+  yearOfEstablishment: 2000,
+  location: "Changa",
+};
+
+function CE() {}
+
+//create a prototype of cspit
+CE.prototype = Object.create(CSPIT);
+
+CE.prototype.totalStudents = 250;
+CE.prototype.totalFaculty = 30;
+
+// Retrieving all details from CSPIT 
+console.log("CSPIT Details:");
+for (const key in CSPIT) {
+  console.log(`${key}: ${CSPIT[key]}`);
+}
+
+// Retrieving all details from CE 
+console.log("\nCE Details:");
+for (const key in CE.prototype) {
+  console.log(`${key}: ${CE.prototype[key]}`);
+}
